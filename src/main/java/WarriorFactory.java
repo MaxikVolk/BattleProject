@@ -9,6 +9,9 @@ class WarriorFactory {
             case KNIGHT:
                 warrior = new Knight();
                 break;
+            case DEFENDER:
+                warrior = new Defender();
+                break;
         }
 
         return warrior;
