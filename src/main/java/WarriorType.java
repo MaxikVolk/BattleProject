@@ -1,0 +1,4 @@
+enum WarriorType {
+    WARRIOR,
+    KNIGHT
+}
