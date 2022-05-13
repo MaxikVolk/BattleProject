@@ -1,7 +1,6 @@
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertFalse;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class TestClass {
     @Test
@@ -52,6 +51,22 @@ public class TestClass {
         assertFalse(Fight.fight(unit_2, unit_3));
     }
     @Test
+    void eighthTest(){
+        Defender unit_1 = new Defender();
+        Rookie unit_2 = new Rookie();
+        Fight.fight(unit_1, unit_2);
+        assertEquals(60,unit_1.health);
+    }
+    @Test
+    void ninthTest(){
+        Defender unit_1 = new Defender();
+        Rookie unit_2 = new Rookie();
+        Warrior unit_3 = new Warrior();
+        Fight.fight(unit_1, unit_2);
+        assertTrue(Fight.fight(unit_1, unit_3));
+    }
+
+    @Test
     void firstBattleTest(){
         Army army_1 = new Army();
         Army army_2 = new Army();
@@ -98,5 +113,45 @@ public class TestClass {
         army_1.add_units(WarriorType.WARRIOR, 11);
         army_2.add_units(WarriorType.WARRIOR, 7);
         assertTrue(Battle.fight(army_1, army_2));
+    }
+    @Test
+    void seventhBattleTest(){
+        Army army_1 = new Army();
+        Army army_2 = new Army();
+        army_1.add_units(WarriorType.WARRIOR, 5);
+        army_1.add_units(WarriorType.DEFENDER, 4);
+        army_1.add_units(WarriorType.DEFENDER, 5);
+        army_2.add_units(WarriorType.WARRIOR, 4);
+        assertTrue(Battle.fight(army_1, army_2));
+    }
+    @Test
+    void eighthBattleTest(){
+        Army army_1 = new Army();
+        Army army_2 = new Army();
+        army_1.add_units(WarriorType.DEFENDER, 5);
+        army_1.add_units(WarriorType.WARRIOR, 20);
+        army_2.add_units(WarriorType.WARRIOR, 21);
+        army_1.add_units(WarriorType.DEFENDER, 4);
+        assertTrue(Battle.fight(army_1, army_2));
+    }
+    @Test
+    void ninthBattleTest(){
+        Army army_1 = new Army();
+        Army army_2 = new Army();
+        army_1.add_units(WarriorType.WARRIOR, 10);
+        army_1.add_units(WarriorType.DEFENDER, 5);
+        army_2.add_units(WarriorType.WARRIOR, 5);
+        army_1.add_units(WarriorType.DEFENDER, 10);
+        assertTrue(Battle.fight(army_1, army_2));
+    }
+    @Test
+    void tenthBattleTest(){
+        Army army_1 = new Army();
+        Army army_2 = new Army();
+        army_1.add_units(WarriorType.DEFENDER, 2);
+        army_1.add_units(WarriorType.WARRIOR, 1);
+        army_1.add_units(WarriorType.DEFENDER, 1);
+        army_2.add_units(WarriorType.WARRIOR, 5);
+        assertFalse(Battle.fight(army_1, army_2));
     }
 }

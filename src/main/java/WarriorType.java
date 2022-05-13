@@ -1,5 +1,6 @@
 enum WarriorType {
     WARRIOR,
     KNIGHT,
-    DEFENDER
+    DEFENDER,
+    ROOKIE
 }

@@ -1,7 +1,7 @@
 public class Program {
     public static void main(String[] args) {
         Warrior chuck = new Warrior();
-        Warrior bruce = new Warrior();
+        Defender bruce = new Defender();
         Knight carl = new Knight();
         Warrior dave = new Warrior();
 
