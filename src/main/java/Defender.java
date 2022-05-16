@@ -1,24 +1,29 @@
 public class Defender extends Warrior{
     final int ATTACK;
-    public int defence;
+    final int DEFENCE;
     {
         health=60;
-        defence=2;
+        DEFENCE=2;
         ATTACK=3;
     }
 
     @Override
-    public void damage(int dam){
-        if(dam>defence) {
-            health-=(dam-defence);
+    public void damage(Warrior at){
+        if(at.getAttack()>DEFENCE) {
+            health-=(at.getAttack()-DEFENCE);
+            at.health += (at.getAttack()-DEFENCE) * at.getVampirism() / 100;
             if (health <= 0) {
-                is_alive = false;
+                kill();
             }
         }
     }
+    @Override
+    public int getAttack() {
+        return this.ATTACK;
+    }
 
     @Override
-    public int getAttack(){
-        return this.ATTACK;
+    public int getHealth() {
+        return this.health;
     }
 }

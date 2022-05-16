@@ -1,21 +1,41 @@
 public class Warrior {
     final int ATTACK;
     public int health;
-    public boolean is_alive;
+    private boolean isAlive;
+    public int vampirism;
+
     {
-        ATTACK=5;
+        ATTACK = 5;
         health = 50;
-        is_alive = true;
+        isAlive = true;
+        vampirism = 0;
     }
-    Warrior(){}
-    public void damage(int dam){
-        health-= dam;
-        if(health<=0){
-            is_alive=false;
+
+    Warrior() {
+    }
+
+    public void damage(Warrior at) {
+        health -= at.getAttack();
+        at.health += at.getAttack() * at.getVampirism() / 100;
+        if (health <= 0) {
+            kill();
         }
     }
-    public int getAttack(){
+
+    public int getAttack() {
         return this.ATTACK;
+    }
+    public boolean getIsAlive(){
+        return this.isAlive;
+    }
+    public int getHealth() {
+        return this.health;
+    }
+    public int getVampirism() {
+        return this.vampirism;
+    }
+    public void kill(){
+        isAlive=false;
     }
 
 }

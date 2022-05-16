@@ -1,12 +1,12 @@
 public class Fight {
     public static boolean fight(Warrior st,Warrior nd){
         while(true){
-            nd.damage(st.getAttack());
-            if(!nd.is_alive){
+            nd.damage(st);
+            if(!nd.getIsAlive()){
                 return true;
             }
-            st.damage(nd.getAttack());
-            if(!st.is_alive){
+            st.damage(nd);
+            if(!st.getIsAlive()){
                 return false;
             }
         }
