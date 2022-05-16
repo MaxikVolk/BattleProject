@@ -67,7 +67,19 @@ public class TestClass {
                 Arguments.of(new Army() .add_units(WarriorType.WARRIOR, 10).add_units(WarriorType.DEFENDER, 5)
                         .add_units(WarriorType.DEFENDER, 10),new Army().add_units(WarriorType.WARRIOR, 5), true),
                 Arguments.of(new Army() .add_units(WarriorType.DEFENDER, 2).add_units(WarriorType.WARRIOR, 1)
-                        .add_units(WarriorType.DEFENDER, 1),new Army() .add_units(WarriorType.WARRIOR, 5), false)
+                        .add_units(WarriorType.DEFENDER, 1),new Army() .add_units(WarriorType.WARRIOR, 5), false),
+                Arguments.of(new Army() .add_units(WarriorType.DEFENDER, 5).add_units(WarriorType.VAMPIRE, 6)
+                        .add_units(WarriorType.WARRIOR, 7),new Army() .add_units(WarriorType.WARRIOR, 6)
+                        .add_units(WarriorType.DEFENDER, 6).add_units(WarriorType.VAMPIRE,6), false),
+                Arguments.of(new Army() .add_units(WarriorType.DEFENDER, 2).add_units(WarriorType.VAMPIRE, 3)
+                        .add_units(WarriorType.WARRIOR, 4),new Army() .add_units(WarriorType.WARRIOR, 4)
+                        .add_units(WarriorType.DEFENDER, 4).add_units(WarriorType.VAMPIRE,3), false),
+                Arguments.of(new Army() .add_units(WarriorType.DEFENDER, 11).add_units(WarriorType.VAMPIRE, 3)
+                        .add_units(WarriorType.WARRIOR, 4),new Army() .add_units(WarriorType.WARRIOR, 4)
+                        .add_units(WarriorType.DEFENDER, 4).add_units(WarriorType.VAMPIRE,13), true),
+                Arguments.of(new Army() .add_units(WarriorType.DEFENDER, 9).add_units(WarriorType.VAMPIRE, 3)
+                        .add_units(WarriorType.WARRIOR, 8),new Army() .add_units(WarriorType.WARRIOR, 4)
+                        .add_units(WarriorType.DEFENDER, 4).add_units(WarriorType.VAMPIRE,13), true)
         );
     }
 
