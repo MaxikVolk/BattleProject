@@ -12,6 +12,9 @@ public class Army {
     public Warrior getWarrior(int i){
         return army.get(i);
     }
+    public int size(){
+        return army.size();
+    }
     public boolean isDefeated() {
         return !army.get(army.size() - 1).isAlive();
     }

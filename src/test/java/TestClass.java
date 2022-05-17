@@ -45,6 +45,7 @@ public class TestClass {
                 Arguments.of(carl, knight, false, true)
         );
     }
+
     @ParameterizedTest
     @MethodSource
     void battleTest(Army st, Army nd, boolean expected) {
@@ -55,31 +56,39 @@ public class TestClass {
         return Stream.of(
 
                 Arguments.of(new Army().add_units(WarriorType.WARRIOR, 1), new Army().add_units(WarriorType.WARRIOR, 2), false),
-                Arguments.of(new Army().add_units(WarriorType.WARRIOR, 2),new Army().add_units(WarriorType.WARRIOR, 3), false),
+                Arguments.of(new Army().add_units(WarriorType.WARRIOR, 2), new Army().add_units(WarriorType.WARRIOR, 3), false),
                 Arguments.of(new Army().add_units(WarriorType.WARRIOR, 5), new Army().add_units(WarriorType.WARRIOR, 7), false),
                 Arguments.of(new Army().add_units(WarriorType.WARRIOR, 20), new Army().add_units(WarriorType.WARRIOR, 21), true),
                 Arguments.of(new Army().add_units(WarriorType.WARRIOR, 10), new Army().add_units(WarriorType.WARRIOR, 11), true),
                 Arguments.of(new Army().add_units(WarriorType.WARRIOR, 11), new Army().add_units(WarriorType.WARRIOR, 7), true),
                 Arguments.of(new Army().add_units(WarriorType.WARRIOR, 5).add_units(WarriorType.DEFENDER, 4)
-                        .add_units(WarriorType.DEFENDER, 5),new Army().add_units(WarriorType.WARRIOR, 4), true),
+                        .add_units(WarriorType.DEFENDER, 5), new Army().add_units(WarriorType.WARRIOR, 4), true),
                 Arguments.of(new Army().add_units(WarriorType.DEFENDER, 5).add_units(WarriorType.WARRIOR, 20)
-                        .add_units(WarriorType.DEFENDER, 4),new Army().add_units(WarriorType.WARRIOR, 21), true),
-                Arguments.of(new Army() .add_units(WarriorType.WARRIOR, 10).add_units(WarriorType.DEFENDER, 5)
-                        .add_units(WarriorType.DEFENDER, 10),new Army().add_units(WarriorType.WARRIOR, 5), true),
-                Arguments.of(new Army() .add_units(WarriorType.DEFENDER, 2).add_units(WarriorType.WARRIOR, 1)
-                        .add_units(WarriorType.DEFENDER, 1),new Army() .add_units(WarriorType.WARRIOR, 5), false),
-                Arguments.of(new Army() .add_units(WarriorType.DEFENDER, 5).add_units(WarriorType.VAMPIRE, 6)
-                        .add_units(WarriorType.WARRIOR, 7),new Army() .add_units(WarriorType.WARRIOR, 6)
-                        .add_units(WarriorType.DEFENDER, 6).add_units(WarriorType.VAMPIRE,6), false),
-                Arguments.of(new Army() .add_units(WarriorType.DEFENDER, 2).add_units(WarriorType.VAMPIRE, 3)
-                        .add_units(WarriorType.WARRIOR, 4),new Army() .add_units(WarriorType.WARRIOR, 4)
-                        .add_units(WarriorType.DEFENDER, 4).add_units(WarriorType.VAMPIRE,3), false),
-                Arguments.of(new Army() .add_units(WarriorType.DEFENDER, 11).add_units(WarriorType.VAMPIRE, 3)
-                        .add_units(WarriorType.WARRIOR, 4),new Army() .add_units(WarriorType.WARRIOR, 4)
-                        .add_units(WarriorType.DEFENDER, 4).add_units(WarriorType.VAMPIRE,13), true),
-                Arguments.of(new Army() .add_units(WarriorType.DEFENDER, 9).add_units(WarriorType.VAMPIRE, 3)
-                        .add_units(WarriorType.WARRIOR, 8),new Army() .add_units(WarriorType.WARRIOR, 4)
-                        .add_units(WarriorType.DEFENDER, 4).add_units(WarriorType.VAMPIRE,13), true)
+                        .add_units(WarriorType.DEFENDER, 4), new Army().add_units(WarriorType.WARRIOR, 21), true),
+                Arguments.of(new Army().add_units(WarriorType.WARRIOR, 10).add_units(WarriorType.DEFENDER, 5)
+                        .add_units(WarriorType.DEFENDER, 10), new Army().add_units(WarriorType.WARRIOR, 5), true),
+                Arguments.of(new Army().add_units(WarriorType.DEFENDER, 2).add_units(WarriorType.WARRIOR, 1)
+                        .add_units(WarriorType.DEFENDER, 1), new Army().add_units(WarriorType.WARRIOR, 5), false),
+                Arguments.of(new Army().add_units(WarriorType.DEFENDER, 5).add_units(WarriorType.VAMPIRE, 6)
+                        .add_units(WarriorType.WARRIOR, 7), new Army().add_units(WarriorType.WARRIOR, 6)
+                        .add_units(WarriorType.DEFENDER, 6).add_units(WarriorType.VAMPIRE, 6), false),
+                Arguments.of(new Army().add_units(WarriorType.DEFENDER, 2).add_units(WarriorType.VAMPIRE, 3)
+                        .add_units(WarriorType.WARRIOR, 4), new Army().add_units(WarriorType.WARRIOR, 4)
+                        .add_units(WarriorType.DEFENDER, 4).add_units(WarriorType.VAMPIRE, 3), false),
+                Arguments.of(new Army().add_units(WarriorType.DEFENDER, 11).add_units(WarriorType.VAMPIRE, 3)
+                        .add_units(WarriorType.WARRIOR, 4), new Army().add_units(WarriorType.WARRIOR, 4)
+                        .add_units(WarriorType.DEFENDER, 4).add_units(WarriorType.VAMPIRE, 13), true),
+                Arguments.of(new Army().add_units(WarriorType.DEFENDER, 9).add_units(WarriorType.VAMPIRE, 3)
+                        .add_units(WarriorType.WARRIOR, 8), new Army().add_units(WarriorType.WARRIOR, 4)
+                        .add_units(WarriorType.DEFENDER, 4).add_units(WarriorType.VAMPIRE, 13), true),
+                Arguments.of(new Army().add_units(WarriorType.LANCER, 5).add_units(WarriorType.VAMPIRE, 3)
+                                .add_units(WarriorType.WARRIOR, 4).add_units(WarriorType.DEFENDER, 2),
+                        new Army().add_units(WarriorType.WARRIOR, 4).add_units(WarriorType.DEFENDER, 4)
+                                .add_units(WarriorType.VAMPIRE, 6).add_units(WarriorType.LANCER, 5), false),
+                Arguments.of(new Army().add_units(WarriorType.LANCER, 7).add_units(WarriorType.VAMPIRE, 3)
+                                .add_units(WarriorType.WARRIOR, 4).add_units(WarriorType.DEFENDER, 2),
+                        new Army().add_units(WarriorType.WARRIOR, 4).add_units(WarriorType.DEFENDER, 4)
+                                .add_units(WarriorType.VAMPIRE, 6).add_units(WarriorType.LANCER, 4), true)
         );
     }
 

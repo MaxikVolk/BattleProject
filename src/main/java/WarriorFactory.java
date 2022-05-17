@@ -18,6 +18,8 @@ class WarriorFactory {
             case VAMPIRE:
                 warrior = new Vampire();
                 break;
+            case LANCER:
+                warrior = new Lancer();
         }
 
         return warrior;

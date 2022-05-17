@@ -3,7 +3,11 @@ public class Battle {
         int i = 0;
         int j = 0;
         while (true) {
-            if (Fight.fight(st.getWarrior(i), nd.getWarrior(j))) {
+            while (true) {
+                if (damage(st, nd, i, j)) break;
+                if (damage(nd, st, j, i)) break;
+            }
+            if (!nd.getWarrior(j).isAlive()) {
                 j++;
             } else {
                 i++;
@@ -15,5 +19,16 @@ public class Battle {
                 return true;
             }
         }
+    }
+
+    private static boolean damage(Army Attack, Army Defence, int i, int j) {
+        Defence.getWarrior(j).damage(Attack.getWarrior(i));
+        if (Attack.getWarrior(i) instanceof Lancer && j < Defence.size()-1) {
+            Defence.getWarrior(j + 1).lancerDamage(Attack.getWarrior(i));
+        }
+        if (!Defence.getWarrior(j).isAlive()) {
+            return true;
+        }
+        return false;
     }
 }
