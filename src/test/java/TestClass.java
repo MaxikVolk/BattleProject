@@ -29,9 +29,9 @@ public class TestClass {
     void aliveTest(Warrior st, Warrior nd, boolean check, boolean expected) {
         Fight.fight(st, nd);
         if (check) {
-            check = st.getIsAlive();
+            check = st.isAlive();
         } else {
-            check = nd.getIsAlive();
+            check = nd.isAlive();
         }
         assertEquals(expected, check);
     }
@@ -102,7 +102,7 @@ public class TestClass {
         Warrior carl = new Warrior();
         Warrior jim = new Warrior();
         Fight.fight(carl, jim);
-        assertTrue(carl.getIsAlive());
+        assertTrue(carl.isAlive());
     }
 
     @Test
@@ -117,7 +117,7 @@ public class TestClass {
         Warrior husband = new Warrior();
         Warrior wife = new Warrior();
         Fight.fight(husband, wife);
-        assertFalse(wife.getIsAlive());
+        assertFalse(wife.isAlive());
     }
 
     @Test
@@ -125,7 +125,7 @@ public class TestClass {
         Warrior dragon = new Warrior();
         Knight knight = new Knight();
         Fight.fight(dragon, knight);
-        assertTrue(knight.getIsAlive());
+        assertTrue(knight.isAlive());
     }
 
     @Test

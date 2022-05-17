@@ -3,21 +3,15 @@ public class Battle {
         int i = 0;
         int j = 0;
         while (true) {
-//            if(!st.army.get(i).getIsAlive()){
-//                i++;
-//            }
-//            if(!nd.army.get(j).getIsAlive()){
-//                j++;
-//            }
-            if (Fight.fight(st.army.get(i), nd.army.get(j))) {
+            if (Fight.fight(st.getWarrior(i), nd.getWarrior(j))) {
                 j++;
             } else {
                 i++;
             }
-            if (!(st.army.get(st.army.size() - 1)).getIsAlive()) {
+            if (st.isDefeated()) {
                 return false;
             }
-            if (!(nd.army.get(nd.army.size() - 1)).getIsAlive()) {
+            if (nd.isDefeated()) {
                 return true;
             }
         }

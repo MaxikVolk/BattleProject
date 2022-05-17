@@ -1,6 +1,5 @@
 public class Defender extends Warrior{
-    final int ATTACK;
-    final int DEFENCE;
+    private final int DEFENCE;
     {
         health=60;
         DEFENCE=2;
@@ -11,9 +10,8 @@ public class Defender extends Warrior{
     public void damage(Warrior at){
         if(at.getAttack()>DEFENCE) {
             health-=(at.getAttack()-DEFENCE);
-            at.health += (at.getAttack()-DEFENCE) * at.getVampirism() / 100;
-            if (health <= 0) {
-                kill();
+            if(at instanceof Vampire){
+                ((Vampire) at).vampirism(DEFENCE);
             }
         }
     }
