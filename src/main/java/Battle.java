@@ -23,8 +23,8 @@ public class Battle {
 
     private static boolean damage(Army Attack, Army Defence, int i, int j) {
         Defence.getWarrior(j).damage(Attack.getWarrior(i));
-        if (Attack.getWarrior(i) instanceof Lancer && j < Defence.size()-1) {
-            Defence.getWarrior(j + 1).lancerDamage(Attack.getWarrior(i));
+        if ((Attack.getWarrior(i) instanceof Lancer) && (j < Defence.size() - 1)) {
+            Defence.getWarrior(j + 1).halfDamage(Attack.getWarrior(i));
         }
         if (!Defence.getWarrior(j).isAlive()) {
             return true;

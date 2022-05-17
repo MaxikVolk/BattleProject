@@ -3,7 +3,7 @@ import java.util.ArrayList;
 public class Army {
     private ArrayList<Warrior> army = new ArrayList<Warrior>();
 
-    public Army add_units(WarriorType type, int n) {
+    public Army addUnits(WarriorType type, int n) {
         for (int i = 0; i < n; i++) {
             army.add(WarriorFactory.createWarrior(type));
         }

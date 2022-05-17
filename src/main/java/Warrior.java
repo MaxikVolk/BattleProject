@@ -16,8 +16,9 @@ public class Warrior {
             ((Vampire) at).vampirism();
         }
     }
-    public void lancerDamage(Warrior at){
-        health -= (at.getAttack()/2);
+
+    public void halfDamage(Warrior at) {
+        health -= (at.getAttack() / 2);
     }
 
     public int getAttack() {

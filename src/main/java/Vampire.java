@@ -25,7 +25,4 @@ public class Vampire extends Warrior {
         return this.health;
     }
 
-    public int getVampirism() {
-        return this.vampirism;
-    }
 }
