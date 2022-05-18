@@ -26,9 +26,9 @@ public class Battle {
         if ((Attack.getWarrior(i) instanceof Lancer) && (j < Defence.size() - 1)) {
             Defence.getWarrior(j + 1).halfDamage(Attack.getWarrior(i));
         }
-        if (!Defence.getWarrior(j).isAlive()) {
-            return true;
+        if ((i < Attack.size() - 1) && (Attack.getWarrior(i + 1) instanceof Healer)) {
+            ((Healer) Attack.getWarrior(i + 1)).heal(Attack.getWarrior(i));
         }
-        return false;
+        return !Defence.getWarrior(j).isAlive();
     }
 }

@@ -1,10 +1,12 @@
 public class Warrior {
     protected int ATTACK;
     protected int health;
+    protected int MAX_HEALTH;
 
     {
         ATTACK = 5;
         health = 50;
+        MAX_HEALTH=health;
     }
 
     Warrior() {
