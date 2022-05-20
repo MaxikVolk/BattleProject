@@ -10,7 +10,7 @@ public class Defender extends Warrior {
     @Override
     public void getDamage(int at) {
         if (at > DEFENCE) {
-            health -= at - DEFENCE;
+            health -= (at - DEFENCE);
         }
     }
 

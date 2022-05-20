@@ -19,12 +19,14 @@ public class Warrior {
             nextWarrior.notifySubscriber();
         }
         def.getDamage(getAttack());
-
     }
     public void getDamage(int at){
         health-=at;
     }
-
+    public void prepareStraightFight(){
+        this.nextWarrior=null;
+        this.previousWarrior=null;
+    }
     public void notifySubscriber(){}
 
     public int getAttack() {

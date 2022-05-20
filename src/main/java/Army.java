@@ -18,5 +18,13 @@ public class Army {
     public Iterator<Warrior> getIterator() {
         return army.iterator();
     }
-
+    public Warrior getWarrior(int i){
+        return army.get(i);
+    }
+    public void removeWarrior(int i){
+        army.remove(i);
+    }
+    public int getSize(){
+        return army.size();
+    }
 }

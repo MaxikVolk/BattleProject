@@ -146,4 +146,53 @@ public class TestClass {
                                 .addUnits(WarriorType.LANCER, 4), false)
         );
     }
+
+    @ParameterizedTest
+    @MethodSource
+    void straightBattleTest(Army st, Army nd, boolean expected) {
+        assertEquals(expected, Battle.straightFight(st, nd));
+    }
+
+    private static Stream<Arguments> straightBattleTest() {
+        return Stream.of(
+                Arguments.of(new Army().addUnits(WarriorType.LANCER, 5)
+                                .addUnits(WarriorType.VAMPIRE, 3)
+                                .addUnits(WarriorType.WARRIOR, 4)
+                                .addUnits(WarriorType.DEFENDER, 2),
+                        new Army().addUnits(WarriorType.WARRIOR, 4)
+                                .addUnits(WarriorType.DEFENDER, 4)
+                                .addUnits(WarriorType.VAMPIRE, 6)
+                                .addUnits(WarriorType.LANCER, 5), false),
+                Arguments.of(new Army().addUnits(WarriorType.LANCER, 7)
+                                .addUnits(WarriorType.VAMPIRE, 3)
+                                .addUnits(WarriorType.WARRIOR, 4)
+                                .addUnits(WarriorType.DEFENDER, 2),
+                        new Army().addUnits(WarriorType.WARRIOR, 4)
+                                .addUnits(WarriorType.DEFENDER, 4)
+                                .addUnits(WarriorType.VAMPIRE, 6)
+                                .addUnits(WarriorType.LANCER, 4), true),
+                Arguments.of(new Army().addUnits(WarriorType.LANCER, 7)
+                                .addUnits(WarriorType.VAMPIRE, 3)
+                                .addUnits(WarriorType.HEALER, 1)
+                                .addUnits(WarriorType.WARRIOR, 4)
+                                .addUnits(WarriorType.HEALER, 1)
+                                .addUnits(WarriorType.DEFENDER, 2),
+                        new Army().addUnits(WarriorType.WARRIOR, 4)
+                                .addUnits(WarriorType.DEFENDER, 4)
+                                .addUnits(WarriorType.HEALER, 1)
+                                .addUnits(WarriorType.VAMPIRE, 6)
+                                .addUnits(WarriorType.LANCER, 4), false),
+                Arguments.of(new Army().addUnits(WarriorType.LANCER, 4)
+                                .addUnits(WarriorType.WARRIOR, 3)
+                                .addUnits(WarriorType.HEALER, 1)
+                                .addUnits(WarriorType.WARRIOR, 4)
+                                .addUnits(WarriorType.HEALER, 1)
+                                .addUnits(WarriorType.KNIGHT, 2),
+                        new Army().addUnits(WarriorType.WARRIOR, 4)
+                                .addUnits(WarriorType.DEFENDER, 4)
+                                .addUnits(WarriorType.HEALER, 1)
+                                .addUnits(WarriorType.VAMPIRE, 2)
+                                .addUnits(WarriorType.LANCER, 4), true)
+        );
+    }
 }
