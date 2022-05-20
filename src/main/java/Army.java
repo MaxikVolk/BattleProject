@@ -1,21 +1,22 @@
 import java.util.ArrayList;
+import java.util.Iterator;
 
 public class Army {
-    private ArrayList<Warrior> army = new ArrayList<Warrior>();
+    private final ArrayList<Warrior> army = new ArrayList<>();
 
     public Army addUnits(WarriorType type, int n) {
         for (int i = 0; i < n; i++) {
             army.add(WarriorFactory.createWarrior(type));
+            if (i > 0) {
+                army.get(i - 1).setNextWarrior(army.get(i));
+                army.get(i).setPreviousWarrior(army.get(i-1));
+            }
         }
         return this;
     }
-    public Warrior getWarrior(int i){
-        return army.get(i);
+
+    public Iterator<Warrior> getIterator() {
+        return army.iterator();
     }
-    public int size(){
-        return army.size();
-    }
-    public boolean isDefeated() {
-        return !army.get(army.size() - 1).isAlive();
-    }
+
 }

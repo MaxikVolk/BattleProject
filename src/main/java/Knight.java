@@ -7,8 +7,4 @@ public class Knight extends Warrior {
         return this.ATTACK;
     }
 
-    @Override
-    public int getHealth() {
-        return this.health;
-    }
 }

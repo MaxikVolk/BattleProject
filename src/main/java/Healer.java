@@ -13,4 +13,8 @@ public class Healer extends Warrior {
             warrior.health = warrior.MAX_HEALTH;
         }
     }
+    @Override
+    public void notifySubscriber(){
+        heal(previousWarrior);
+    }
 }

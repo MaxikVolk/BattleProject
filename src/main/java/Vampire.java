@@ -1,5 +1,5 @@
 public class Vampire extends Warrior {
-    private int vampirism;
+    private final int vampirism;
 
     {
         ATTACK = 4;
@@ -7,6 +7,16 @@ public class Vampire extends Warrior {
         vampirism = 50;
     }
 
+    @Override
+    public void damage(Warrior def) {
+        super.damage(def);
+        if(def instanceof Defender){
+            vampirism(((Defender) def).getDEFENCE());
+        }
+        else{
+            vampirism();
+        }
+    }
     public void vampirism() {
         health += (ATTACK * vampirism / 100);
     }
@@ -20,9 +30,5 @@ public class Vampire extends Warrior {
         return this.ATTACK;
     }
 
-    @Override
-    public int getHealth() {
-        return this.health;
-    }
 
 }

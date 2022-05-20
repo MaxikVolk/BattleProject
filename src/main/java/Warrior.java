@@ -1,27 +1,31 @@
 public class Warrior {
     protected int ATTACK;
     protected int health;
-    protected int MAX_HEALTH;
+    protected final int MAX_HEALTH;
+    protected Warrior nextWarrior;
+    protected Warrior previousWarrior;
 
     {
         ATTACK = 5;
         health = 50;
-        MAX_HEALTH=health;
+        MAX_HEALTH = health;
     }
 
     Warrior() {
     }
 
-    public void damage(Warrior at) {
-        health -= at.getAttack();
-        if (at instanceof Vampire) {
-            ((Vampire) at).vampirism();
+    public void damage(Warrior def) {
+        if(nextWarrior!=null){
+            nextWarrior.notifySubscriber();
         }
+        def.getDamage(getAttack());
+
+    }
+    public void getDamage(int at){
+        health-=at;
     }
 
-    public void halfDamage(Warrior at) {
-        health -= (at.getAttack() / 2);
-    }
+    public void notifySubscriber(){}
 
     public int getAttack() {
         return this.ATTACK;
@@ -30,9 +34,14 @@ public class Warrior {
     public boolean isAlive() {
         return health > 0;
     }
-
-    public int getHealth() {
-        return this.health;
+    public Warrior getNextWarrior(){
+        return nextWarrior;
+    }
+    public void setNextWarrior(Warrior warrior){
+        this.nextWarrior = warrior;
+    }
+    public void setPreviousWarrior(Warrior warrior){
+        this.previousWarrior = warrior;
     }
 
 }

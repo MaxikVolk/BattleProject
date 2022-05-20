@@ -1,11 +1,11 @@
 public class Fight {
     public static boolean fight(Warrior st, Warrior nd) {
         while (true) {
-            nd.damage(st);
+            st.damage(nd);
             if (!nd.isAlive()) {
                 return true;
             }
-            st.damage(nd);
+            nd.damage(st);
             if (!st.isAlive()) {
                 return false;
             }
