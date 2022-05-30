@@ -34,9 +34,9 @@ public class Battle {
                 nd.getWarrior(i).prepareStraightFight();
                 Fight.fight(st.getWarrior(i), nd.getWarrior(i));
             }
-            int j = 0;
             int l = 0;
-            for (int k = 0; k < stSize && k < ndSize; k++) {
+            int j = 0;
+            while (j < st.getSize() && l < nd.getSize()) {
                 if (!st.getWarrior(j).isAlive()) {
                     st.removeWarrior(j);
                     l++;

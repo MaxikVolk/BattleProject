@@ -1,9 +1,9 @@
 public class Rookie extends Warrior{
     {
-        ATTACK=1;
+        attack=1;
     }
     @Override
     public int getAttack() {
-        return this.ATTACK;
+        return this.attack;
     }
 }

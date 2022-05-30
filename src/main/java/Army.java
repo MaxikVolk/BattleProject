@@ -27,4 +27,7 @@ public class Army {
     public int getSize(){
         return army.size();
     }
+    public void clear(){
+        army.clear();
+    }
 }

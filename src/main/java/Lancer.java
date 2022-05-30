@@ -1,6 +1,6 @@
 public class Lancer extends Warrior {
     {
-        ATTACK = 6;
+        attack = 6;
     }
 
     @Override

@@ -1,9 +1,9 @@
 public class Healer extends Warrior {
-    private final int heal;
+    private int heal;
 
     {
         health = 60;
-        ATTACK = 0;
+        attack = 0;
         heal = 2;
     }
 
@@ -13,6 +13,14 @@ public class Healer extends Warrior {
             warrior.health = warrior.MAX_HEALTH;
         }
     }
+
+    @Override
+    public Healer equipWeapon(Weapon weapon) {
+        super.equipWeapon(weapon);
+        heal+= weapon.getHealPower();
+        return this;
+    }
+
     @Override
     public void notifySubscriber(){
         heal(previousWarrior);

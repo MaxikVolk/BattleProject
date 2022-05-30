@@ -1,26 +1,33 @@
 public class Defender extends Warrior {
-    private final int DEFENCE;
+    private int defence;
 
     {
         health = 60;
-        DEFENCE = 2;
-        ATTACK = 3;
+        defence = 2;
+        attack = 3;
     }
 
     @Override
     public void getDamage(int at) {
-        if (at > DEFENCE) {
-            health -= (at - DEFENCE);
+        if (at > defence) {
+            health -= (at - defence);
         }
     }
 
     @Override
+    public Defender equipWeapon(Weapon weapon) {
+        super.equipWeapon(weapon);
+        defence+=weapon.getDefence();
+        return this;
+    }
+
+    @Override
     public int getAttack() {
-        return this.ATTACK;
+        return this.attack;
     }
 
 
-    protected int getDEFENCE() {
-        return this.DEFENCE;
+    protected int getDefence() {
+        return this.defence;
     }
 }
