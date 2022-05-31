@@ -50,6 +50,12 @@ public class Warrior {
     public Warrior getNextWarrior() {
         return nextWarrior;
     }
+    public boolean hasNextWarrior(){
+        if(nextWarrior==null){
+            return false;
+        }
+        return true;
+    }
 
     public void setNextWarrior(Warrior warrior) {
         this.nextWarrior = warrior;

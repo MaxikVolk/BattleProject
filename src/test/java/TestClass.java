@@ -182,7 +182,24 @@ public class TestClass {
                         firstArmy.getWarrior(2).equipWeapon(new Weapon(20,-2,2,-55,3)),
                         secondArmy.getWarrior(0).equipWeapon(new Weapon(-20,6,1,40,-2)),
                         secondArmy.getWarrior(1).equipWeapon(new Weapon(20,-2,2,-55,3)),
-                        secondArmy.getWarrior(2).equipWeapon(new Weapon(20,-2,2,-55,3)))
+                        secondArmy.getWarrior(2).equipWeapon(new Weapon(20,-2,2,-55,3))),
+                Arguments.of(firstArmy=new Army(),secondArmy = new Army(),true,
+                        firstArmy.addUnits(WarriorType.WARLORD,1).addUnits(WarriorType.WARRIOR,2)
+                                .addUnits(WarriorType.LANCER,2).addUnits(WarriorType.HEALER,2),
+                        secondArmy.addUnits(WarriorType.WARLORD,1).addUnits(WarriorType.VAMPIRE,1)
+                                .addUnits(WarriorType.HEALER,2).addUnits(WarriorType.KNIGHT,2)),
+                Arguments.of(firstArmy=new Army(),secondArmy=new Army(),false,
+                        firstArmy.addUnits(WarriorType.WARRIOR,2).addUnits(WarriorType.LANCER,2)
+                                .addUnits(WarriorType.DEFENDER,1).addUnits(WarriorType.WARLORD,3),
+                        secondArmy.addUnits(WarriorType.WARLORD,2).addUnits(WarriorType.VAMPIRE,1)
+                                .addUnits(WarriorType.HEALER,5).addUnits(WarriorType.KNIGHT,2)),
+                Arguments.of(firstArmy=new Army(),secondArmy=new Army(),true,
+                        firstArmy.addUnits(WarriorType.WARRIOR,2).addUnits(WarriorType.LANCER,3)
+                                .addUnits(WarriorType.DEFENDER,1).addUnits(WarriorType.WARLORD,4),
+                        secondArmy.addUnits(WarriorType.WARLORD,1).addUnits(WarriorType.VAMPIRE,1)
+                                .addUnits(WarriorType.ROOKIE,1).addUnits(WarriorType.KNIGHT,1),
+                        firstArmy.getWarrior(0).equipWeapon(new Sword()),
+                        secondArmy.getWarrior(0).equipWeapon(new Shield()))
         );
     }
 
@@ -270,6 +287,13 @@ public class TestClass {
                         firstArmy.getWarrior(2).equipWeapon(new Katana()),
                         secondArmy.getWarrior(0).equipWeapon(new MagicWand()),
                         secondArmy.getWarrior(1).equipWeapon(new MagicWand()))
+//                Arguments.of(firstArmy = new Army(),secondArmy=new Army(),false,
+//                        firstArmy.addUnits(WarriorType.WARRIOR,2).addUnits(WarriorType.LANCER,3)
+//                                .addUnits(WarriorType.DEFENDER,1).addUnits(WarriorType.WARLORD,1),
+//                        secondArmy.addUnits(WarriorType.WARLORD,5).addUnits(WarriorType.VAMPIRE,1)
+//                                .addUnits(WarriorType.ROOKIE,1).addUnits(WarriorType.KNIGHT,1),
+//                        firstArmy.getWarrior(0).equipWeapon(new Sword()),
+//                        secondArmy.getWarrior(0).equipWeapon(new Shield()))
         );
     }
 }

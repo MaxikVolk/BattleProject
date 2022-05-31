@@ -1,5 +1,5 @@
 public class Defender extends Warrior {
-    private int defence;
+    protected int defence;
 
     {
         health = 60;
@@ -17,7 +17,7 @@ public class Defender extends Warrior {
     @Override
     public Defender equipWeapon(Weapon weapon) {
         super.equipWeapon(weapon);
-        defence+=weapon.getDefence();
+        defence += weapon.getDefence();
         return this;
     }
 

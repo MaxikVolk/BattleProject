@@ -17,12 +17,12 @@ public class Healer extends Warrior {
     @Override
     public Healer equipWeapon(Weapon weapon) {
         super.equipWeapon(weapon);
-        heal+= weapon.getHealPower();
+        heal += weapon.getHealPower();
         return this;
     }
 
     @Override
-    public void notifySubscriber(){
+    public void notifySubscriber() {
         heal(previousWarrior);
     }
 }

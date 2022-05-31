@@ -5,5 +5,6 @@ enum WarriorType {
     ROOKIE,
     VAMPIRE,
     LANCER,
-    HEALER
+    HEALER,
+    WARLORD
 }

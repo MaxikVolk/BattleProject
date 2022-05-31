@@ -9,6 +9,7 @@ class WarriorFactory {
             case VAMPIRE -> new Vampire();
             case LANCER -> new Lancer();
             case HEALER -> new Healer();
+            case WARLORD -> new Warlord();
         };
     }
 }
