@@ -87,7 +87,7 @@ public class Army {
             }
 
 
-            int j;//дуже поганий код
+            int j;
             if (temp.contains(new Healer())) {
                 j = 2;
             } else {
@@ -99,7 +99,7 @@ public class Army {
                 }
             } else if (army.size() > 0) {
                 temp.add(army.get(0));
-            }//кінець дуже поганого коду
+            }
 
 
             army = temp;
