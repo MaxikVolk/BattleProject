@@ -1,7 +1,9 @@
+package Warriors;
+
 public class Warrior {
+    protected final int MAX_HEALTH;
     protected int attack;
     protected int health;
-    protected final int MAX_HEALTH;
     protected Warrior nextWarrior;
     protected Warrior previousWarrior;
 
@@ -11,10 +13,10 @@ public class Warrior {
         MAX_HEALTH = health;
     }
 
-    Warrior() {
+    public Warrior() {
     }
 
-    public Warrior equipWeapon(Weapon weapon) {
+    public Warrior equipWeapon(Weapons.Weapon weapon) {
         health += weapon.getHealth();
         attack += weapon.getAttack();
         return this;
@@ -38,7 +40,8 @@ public class Warrior {
 
     public void notifySubscriber() {
     }
-    public int getHealth(){
+
+    public int getHealth() {
         return this.health;
     }
 
@@ -52,12 +55,6 @@ public class Warrior {
 
     public Warrior getNextWarrior() {
         return nextWarrior;
-    }
-    public boolean hasNextWarrior(){
-        if(nextWarrior==null){
-            return false;
-        }
-        return true;
     }
 
     public void setNextWarrior(Warrior warrior) {

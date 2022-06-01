@@ -1,10 +1,12 @@
+package Weapons;
+
 public class Sword extends Weapon {
     {
         health = 5;
         attack = 2;
     }
 
-    Sword() {
+    public Sword() {
     }
 
     @Override

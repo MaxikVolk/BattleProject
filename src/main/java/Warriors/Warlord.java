@@ -1,3 +1,5 @@
+package Warriors;
+
 public class Warlord extends Defender {
     {
         health = 100;

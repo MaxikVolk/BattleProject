@@ -1,3 +1,5 @@
+package Warriors;
+
 public class Lancer extends Warrior {
     {
         attack = 6;

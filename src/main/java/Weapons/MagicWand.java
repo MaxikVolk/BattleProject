@@ -1,3 +1,5 @@
+package Weapons;
+
 public class MagicWand extends Weapon {
     {
         health = 30;
@@ -5,7 +7,7 @@ public class MagicWand extends Weapon {
         healPower = 3;
     }
 
-    MagicWand() {
+    public MagicWand() {
     }
 
     @Override

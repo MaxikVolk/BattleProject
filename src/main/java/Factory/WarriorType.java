@@ -1,4 +1,6 @@
-enum WarriorType {
+package Factory;
+
+public enum WarriorType {
     WARRIOR,
     KNIGHT,
     DEFENDER,

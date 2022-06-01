@@ -1,3 +1,5 @@
+package Warriors;
+
 public class Defender extends Warrior {
     protected int defence;
 
@@ -15,7 +17,7 @@ public class Defender extends Warrior {
     }
 
     @Override
-    public Defender equipWeapon(Weapon weapon) {
+    public Defender equipWeapon(Weapons.Weapon weapon) {
         super.equipWeapon(weapon);
         defence += weapon.getDefence();
         return this;

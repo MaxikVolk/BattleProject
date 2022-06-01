@@ -1,3 +1,5 @@
+package Warriors;
+
 public class Healer extends Warrior {
     private int heal;
 
@@ -15,7 +17,7 @@ public class Healer extends Warrior {
     }
 
     @Override
-    public Healer equipWeapon(Weapon weapon) {
+    public Healer equipWeapon(Weapons.Weapon weapon) {
         super.equipWeapon(weapon);
         heal += weapon.getHealPower();
         return this;

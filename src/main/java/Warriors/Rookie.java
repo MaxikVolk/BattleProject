@@ -1,3 +1,5 @@
+package Warriors;
+
 public class Rookie extends Warrior {
     {
         attack = 1;

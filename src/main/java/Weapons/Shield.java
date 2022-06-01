@@ -1,12 +1,13 @@
-public class GreatAxe extends Weapon {
+package Weapons;
+
+public class Shield extends Weapon {
     {
-        health = -15;
-        attack = 5;
-        defence = -2;
-        vampirism = 10;
+        health = 20;
+        attack = -1;
+        defence = 2;
     }
 
-    GreatAxe() {
+    public Shield() {
     }
 
     @Override
@@ -22,10 +23,5 @@ public class GreatAxe extends Weapon {
     @Override
     public int getDefence() {
         return this.defence;
-    }
-
-    @Override
-    public int getVampirism() {
-        return this.vampirism;
     }
 }

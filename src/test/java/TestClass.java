@@ -1,3 +1,6 @@
+import Factory.WarriorType;
+import Warriors.*;
+import Weapons.*;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
@@ -8,14 +11,13 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class TestClass {
     private static Stream<Arguments> FightTest() {
-        Warrior warrior;
         Knight knight;
         Defender defender;
         return Stream.of(
                 Arguments.of(new Warrior(), new Knight(), false),
                 Arguments.of(new Knight(), new Warrior(), true),
-                Arguments.of(knight = new Knight(), warrior = new Warrior(), false, Fight.fight(new Warrior(), knight)),
-                Arguments.of(defender = new Defender(), warrior = new Warrior(), true, Fight.fight(defender, new Rookie())),
+                Arguments.of(knight = new Knight(),new Warrior(), false, Fight.fight(new Warrior(), knight)),
+                Arguments.of(defender = new Defender(),new Warrior(), true, Fight.fight(defender, new Rookie())),
                 Arguments.of(new Defender(), new Warlord(), false),
                 Arguments.of(new Warlord(), new Vampire(), true),
                 Arguments.of(new Warlord(), new Knight(), true),
@@ -270,12 +272,12 @@ public class TestClass {
                         secondArmy.getWarrior(0).equipWeapon(new MagicWand()),
                         secondArmy.getWarrior(1).equipWeapon(new MagicWand()))
 //                Arguments.of(firstArmy = new Army(),secondArmy=new Army(),false,
-//                        firstArmy.addUnits(WarriorType.WARRIOR,2).addUnits(WarriorType.LANCER,3)
-//                                .addUnits(WarriorType.DEFENDER,1).addUnits(WarriorType.WARLORD,1),
-//                        secondArmy.addUnits(WarriorType.WARLORD,5).addUnits(WarriorType.VAMPIRE,1)
-//                                .addUnits(WarriorType.ROOKIE,1).addUnits(WarriorType.KNIGHT,1),
-//                        firstArmy.getWarrior(0).equipWeapon(new Sword()),
-//                        secondArmy.getWarrior(0).equipWeapon(new Shield()))
+//                        firstArmy.addUnits(Factory.WarriorType.WARRIOR,2).addUnits(Factory.WarriorType.LANCER,3)
+//                                .addUnits(Factory.WarriorType.DEFENDER,1).addUnits(Factory.WarriorType.WARLORD,1),
+//                        secondArmy.addUnits(Factory.WarriorType.WARLORD,5).addUnits(Factory.WarriorType.VAMPIRE,1)
+//                                .addUnits(Factory.WarriorType.ROOKIE,1).addUnits(Factory.WarriorType.KNIGHT,1),
+//                        firstArmy.getWarrior(0).equipWeapon(new Weapons.Sword()),
+//                        secondArmy.getWarrior(0).equipWeapon(new Weapons.Shield()))
         );
     }
 

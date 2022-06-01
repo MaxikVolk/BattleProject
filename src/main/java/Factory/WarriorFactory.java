@@ -1,4 +1,8 @@
-class WarriorFactory {
+package Factory;
+
+import Warriors.*;
+
+public class WarriorFactory {
     public static Warrior createWarrior(WarriorType type) {
 
         return switch (type) {

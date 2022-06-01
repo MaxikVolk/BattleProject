@@ -1,3 +1,5 @@
+import Warriors.Warrior;
+
 public class Fight {
     public static boolean fight(Warrior st, Warrior nd) {
         while (true) {

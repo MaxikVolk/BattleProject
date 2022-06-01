@@ -5,10 +5,10 @@ public class Battle {
         st.moveUnits();
         nd.moveUnits();
 
-//        Iterator<Warrior> fst = st.getIterator();   Варіант з ітератором, не підходить
-//        Iterator<Warrior> snd = nd.getIterator();   нам якщо є Варлорд
-//        Warrior firstArmyWarrior = fst.next();
-//        Warrior secondArmyWarrior = snd.next();
+//        Iterator<Warriors.Warrior> fst = st.getIterator();   Варіант з ітератором, не підходить
+//        Iterator<Warriors.Warrior> snd = nd.getIterator();   нам якщо є Варлорд
+//        Warriors.Warrior firstArmyWarrior = fst.next();
+//        Warriors.Warrior secondArmyWarrior = snd.next();
 //
 //
 //        while (true) {

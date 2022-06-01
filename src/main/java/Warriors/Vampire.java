@@ -1,3 +1,5 @@
+package Warriors;
+
 public class Vampire extends Warrior {
     private int vampirism;
 
@@ -18,7 +20,7 @@ public class Vampire extends Warrior {
     }
 
     @Override
-    public Vampire equipWeapon(Weapon weapon) {
+    public Vampire equipWeapon(Weapons.Weapon weapon) {
         super.equipWeapon(weapon);
         vampirism += weapon.getVampirism();
         return this;

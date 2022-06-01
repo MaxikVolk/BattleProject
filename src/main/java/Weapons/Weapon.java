@@ -1,3 +1,5 @@
+package Weapons;
+
 public class Weapon {
     protected int health;
     protected int attack;

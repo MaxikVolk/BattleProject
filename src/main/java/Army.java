@@ -1,5 +1,11 @@
+import Factory.WarriorFactory;
+import Factory.WarriorType;
+import Warriors.Healer;
+import Warriors.Lancer;
+import Warriors.Warlord;
+import Warriors.Warrior;
+
 import java.util.ArrayList;
-import java.util.Iterator;
 
 public class Army {
     private ArrayList<Warrior> army = new ArrayList<>();
@@ -104,16 +110,16 @@ public class Army {
 
             army = temp;
             if (army.size() > 1) {
-                army.get(0).nextWarrior = army.get(1);
+                army.get(0).setNextWarrior(army.get(1));
                 if (army.size() > 2) {
-                    army.get(1).previousWarrior = army.get(0);
+                    army.get(1).setPreviousWarrior(army.get(0));
                 }
             }
         }
     }
 
 
-//    public Iterator<Warrior> getIterator() {
+//    public Iterator<Warriors.Warrior> getIterator() {
 //        return army.iterator();
 //    }
 

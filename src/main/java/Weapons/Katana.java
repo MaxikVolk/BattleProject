@@ -1,3 +1,5 @@
+package Weapons;
+
 public class Katana extends Weapon {
     {
         health = -20;
@@ -6,7 +8,7 @@ public class Katana extends Weapon {
         vampirism = 50;
     }
 
-    Katana() {
+    public Katana() {
     }
 
     @Override

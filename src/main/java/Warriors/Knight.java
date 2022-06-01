@@ -1,3 +1,5 @@
+package Warriors;
+
 public class Knight extends Warrior {
     {
         attack = 7;
